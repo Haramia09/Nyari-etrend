@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ákos - Nyári Maximális Zsírvesztés Étrend</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons for modern UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            .print-card { border: 1px solid #e2e8f0 !important; box-shadow: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
+
+    <!-- HEADER SECTION -->
+    <header class="bg-slate-800 border-b border-slate-700 py-6 px-4 sm:px-6 lg:px-8 no-print">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-500/20">
+                    <i class="fa-solid fa-fire-flame-curved text-2xl animate-pulse"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">
+                        ÁKOS — MAXIMÁLIS NYÁRI ZSÍRVESZTÉS ÉTREND
+                    </h1>
+                    <p class="text-slate-400 text-sm font-medium mt-0.5">Személyre szabott recomp & szálkásító program 11 hétre</p>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <button onclick="window.print()" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 border border-slate-600">
+                    <i class="fa-solid fa-print"></i> Nyomtatás
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col gap-6">
+        
+        <!-- BIOMETRIC INFO CARD -->
+        <section class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-xl relative overflow-hidden print-card">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <h2 class="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-user-gear text-blue-400"></i> Aktuális Profil & Célkitűzések
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-slate-900/60 border border-slate-700/50 p-4 rounded-xl">
+                    <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider block">Fizikai Adatok</span>
+                    <span class="text-lg font-extrabold text-white mt-1 block">184 cm | 102.5 kg</span>
+                    <span class="text-xs text-emerald-400 mt-1 block"><i class="fa-solid fa-arrows-up-down"></i> Magas izomtömeg</span>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-700/50 p-4 rounded-xl">
+                    <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider block">Testzsírszázalék</span>
+                    <span class="text-lg font-extrabold text-white mt-1 block">20.4% → Cél: ~12-14%</span>
+                    <span class="text-xs text-blue-400 mt-1 block"><i class="fa-solid fa-bullseye"></i> Maximális szálkásodás</span>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-700/50 p-4 rounded-xl">
+                    <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider block">Anyagcsere (BMR)</span>
+                    <span class="text-lg font-extrabold text-white mt-1 block">2,133 kcal / nap</span>
+                    <span class="text-xs text-amber-400 mt-1 block"><i class="fa-solid fa-bolt"></i> Progresszív deficit</span>
+                </div>
+                <div class="bg-slate-900/60 border border-slate-700/50 p-4 rounded-xl">
+                    <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider block">Edzésnapok (Izomnövelés)</span>
+                    <span class="text-lg font-extrabold text-white mt-1 block">Hétfő, Szerda, Csütörtök</span>
+                    <span class="text-xs text-purple-400 mt-1 block"><i class="fa-solid fa-dumbbell"></i> Súlyzós edzés</span>
+                </div>
+            </div>
+
+            <!-- RESTRICTIONS GUARDRAIL -->
+            <div class="mt-4 bg-red-950/40 border border-red-900/50 rounded-xl p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                <div class="flex items-start gap-3">
+                    <div class="bg-red-500/20 text-red-400 p-2 rounded-lg mt-0.5 sm:mt-0">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-red-300">Szigorú étrendi korlátozások beépítve:</h4>
+                        <p class="text-xs text-red-400 mt-0.5">0g gomba, 0g brokkoli / brokkoli-féle, maximum heti 3 nap tojás (Hétfő, Szerda, Szombat).</p>
+                    </div>
+                </div>
+                <div class="text-xs bg-emerald-500/20 text-emerald-300 px-3 py-1.5 rounded-full font-bold border border-emerald-500/30 whitespace-nowrap">
+                    <i class="fa-solid fa-circle-check"></i> Biztonságos & Ellenőrzött
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRESSIVE PHASES EXPLANATION -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4 no-print">
+            <div class="bg-gradient-to-br from-slate-800 to-blue-950 border border-blue-900/30 rounded-xl p-5 relative">
+                <div class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-1">1. FÁZIS (1-4. Hét)</div>
+                <h3 class="text-base font-bold text-white">Alapozás & Adaptáció</h3>
+                <p class="text-xs text-slate-300 mt-2">Mérsékelt kalóriadeficit (~2400 kcal) a stabil erő megtartásához. Beindítjuk a zsírégetést, magas fehérje (~200g) mellett.</p>
+                <span class="absolute bottom-3 right-4 text-5xl font-extrabold text-blue-500/5 select-none">01</span>
+            </div>
+            <div class="bg-gradient-to-br from-slate-800 to-teal-950 border border-teal-900/30 rounded-xl p-5 relative">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-widest mb-1">2. FÁZIS (5-8. Hét)</div>
+                <h3 class="text-base font-bold text-white">Carb-Cycling (Szénhidrát-hintáztatás)</h3>
+                <p class="text-xs text-slate-300 mt-2">Az edzésnapokon magasabb, míg a pihenőnapokon alacsonyabb szénhidráttal dolgozunk, így kikerüljük az anyagcsere lelassulását.</p>
+                <span class="absolute bottom-3 right-4 text-5xl font-extrabold text-teal-500/5 select-none">02</span>
+            </div>
+            <div class="bg-gradient-to-br from-slate-800 to-rose-950 border border-rose-900/30 rounded-xl p-5 relative">
+                <div class="text-xs font-bold text-rose-400 uppercase tracking-widest mb-1">3. FÁZIS (9-11. Hét)</div>
+                <h3 class="text-base font-bold text-white">Maximális Shred & Leszáradás</h3>
+                <p class="text-xs text-slate-300 mt-2">A kalóriákat ~2100-re visszük le a nyári csúcsforma eléréséhez. Szigorú fókusz a rostos zöldségeken a teltségérzetért.</p>
+                <span class="absolute bottom-3 right-4 text-5xl font-extrabold text-rose-500/5 select-none">03</span>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE WEEK SELECTOR -->
+        <section class="no-print">
+            <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Válassz Hetet:</h3>
+            <div class="flex flex-wrap gap-2" id="week-selector-container">
+                <!-- Javascript will render week buttons here -->
+            </div>
+        </section>
+
+        <!-- ACTIVE WEEK CONTAINER -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- DAILY MEALS SCHEDULE (LEFT & CENTER) -->
+            <div class="lg:col-span-2 flex flex-col gap-4">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-xl font-extrabold text-white flex items-center gap-2" id="current-week-title">
+                        <!-- Will be updated dynamically -->
+                    </h2>
+                    <span class="px-3 py-1 text-xs font-bold rounded-full border" id="current-phase-badge">
+                        <!-- Will be updated dynamically -->
+                    </span>
+                </div>
+
+                <!-- WEEKLY MEALS TABS / ACCORDIONS -->
+                <div class="space-y-3" id="daily-meals-container">
+                    <!-- Javascript will render daily meal items here -->
+                </div>
+            </div>
+
+            <!-- LIDL SHOPPING LIST CARD (RIGHT) -->
+            <div class="lg:col-span-1">
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-xl sticky top-6 print-card" id="shopping-list-card">
+                    <div class="flex justify-between items-center border-b border-slate-700 pb-4 mb-4">
+                        <div>
+                            <h3 class="text-lg font-extrabold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-cart-shopping text-emerald-400"></i> Heti Lidl Kosár
+                            </h3>
+                            <p class="text-xs text-slate-400 mt-0.5">Pontos heti mennyiségek Ákos részére</p>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Lidl-Logo.svg" alt="Lidl Logo" class="w-10 h-10 rounded-lg">
+                    </div>
+
+                    <!-- Filter buttons for shopping list -->
+                    <div class="flex gap-2 mb-4 text-xs no-print">
+                        <button onclick="checkAllIngredients(true)" class="text-blue-400 hover:text-blue-300 font-semibold transition-all">Mindet kijelöl</button>
+                        <span class="text-slate-600">|</span>
+                        <button onclick="checkAllIngredients(false)" class="text-slate-400 hover:text-slate-300 font-semibold transition-all">Kijelölések törlése</button>
+                    </div>
+
+                    <!-- Shopping List Items Container -->
+                    <div class="space-y-2 max-h-[450px] overflow-y-auto pr-1" id="shopping-list-container">
+                        <!-- Javascript will dynamically render items here -->
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-700 text-xs text-slate-400 flex items-center gap-2">
+                        <i class="fa-solid fa-lightbulb text-amber-400"></i>
+                        <span>A húsokat/halakat érdemes előre kiporciózni és lefagyasztani!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-6 text-center text-xs text-slate-500 mt-12 no-print">
+        <p class="font-medium">Összeállította: Kőrösi Éva (Sportdietetikus) & Gemini | Ákos részére 2026</p>
+        <p class="mt-1">A táplálkozás nem tökéletességről, hanem következetességről szól.</p>
+    </footer>
+
+    <!-- DATA & APP SCRIPT -->
+    <script>
+        // Database of all 11 weeks containing variations and precise Lidl Shopping Lists
+        const weeklyData = [
+            {
+                week: 1,
+                phase: "1. Fázis: Alapozás (Kalória: ~2400 kcal, P: 200g, CH: 220g, F: 80g)",
+                phaseBadgeClass: "bg-blue-500/10 text-blue-400 border-blue-500/30",
+                days: [
+                    { name: "Hétfő", status: "EDZÉSNAP (Súlyzós edzés) - Tojásos nap 1/3", 
+                      breakfast: "3 db egész tojásból rántotta, 100g Lidl teljes kiőrlésű kenyér, 100g kígyóuborka.", 
+                      lunch: "180g grill csirkemell filé, 80g jázmin rizs, 150g paradicsomsaláta kevés olívaolajjal.", 
+                      snack: "35g Tejsavófehérje izolátum vízzel, 1 nagy Lidl banán.", 
+                      dinner: "150g sütőben sült tonhalfilé, 200g édesburgonya, friss fejes saláta citromos öntettel." },
+                    { name: "Kedd", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "60g zabpehely vízzel főzve, 150g Milbona zsírszegény görög joghurt (0%), 50g áfonya, 15g dió.", 
+                      lunch: "180g darált pulykamell (sovány) bolognai mártással (Lidl cukormentes paradicsomszósz), 80g teljes kiőrlésű tészta.", 
+                      snack: "200g Pilos zsírszegény túró, 1 db narancs, 15g mandula.", 
+                      dinner: "180g grillezett csirkemell, 100g quinoa, 150g párolt sárgarépa és cukkini." },
+                    { name: "Szerda", status: "EDZÉSNAP (Súlyzós edzés) - Tojásos nap 2/3", 
+                      breakfast: "Tükörtojás (3 db Lidl bio tojás), 100g rozskenyér, 100g kaliforniai paprika.", 
+                      lunch: "180g grillezett pulykamellcsíkok, 300g főtt burgonya petrezselyemmel, csemegeuborka.", 
+                      snack: "35g Tejsavófehérje turmix, 4 db datolya vagy 3 db puffasztott rizsszelet.", 
+                      dinner: "150g tőkehalfilé citromos pácban, 80g barna rizs, nagy adag vegyes zöldsaláta." },
+                    { name: "Csütörtök", status: "EDZÉSNAP (Súlyzós edzés) - Tojásmentes", 
+                      breakfast: "Zabpalacsinta: 50g darált zab, 30g fehérjepor vízzel tésztává keverve, kisütve (tojás nélkül), 100g eper.", 
+                      lunch: "180g marhahúspogácsa (sovány marhából), 80g bulgur, kovászos uborka.", 
+                      snack: "35g Tejsavófehérje turmix, 1 nagy Lidl banán.", 
+                      dinner: "180g csirkemellcsíkok wokban sütve, 200g sütőben sült édesburgonya, cukkini." },
+                    { name: "Péntek", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "Krémes smoothie: 40g fehérjepor, 1 banán, 20g natúr mogyoróvaj, 30g zabpehely vízzel turmixolva.", 
+                      lunch: "1 konzerv natúr tonhal (saját lében, ~130g) salátaágyon (uborka, paradicsom), 1 evőkanál tökmaggal.", 
+                      snack: "200g cottage cheese (szemcsés túró - Lidl light), 3 db korpás keksz, 1 alma.", 
+                      dinner: "150g sült lazacfilé, 80g quinoa, párolt sárgarépa." },
+                    { name: "Szombat", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "200g zsírszegény túró natúr joghurttal és édesítővel krémesítve, 100g málna, 20g kesudió.", 
+                      lunch: "180g csirkemell steak, 80g basmati rizs, párolt spárga vagy cukkini.", 
+                      snack: "Zsírszegény túró vagy cottage cheese (150g), 1 db narancs.", 
+                      dinner: "180g grillezett pulykamell, 200g sütőtök sütőben sütve, jégsaláta." },
+                    { name: "Vasárnap", status: "Pihenőnap - Tojásos nap 3/3", 
+                      breakfast: "Tojáslepény (3 bio tojásból) 50g zsírszegény sajttal, 80g teljes kiőrlésű pirítós, retek.", 
+                      lunch: "Sütőben sült csirkecomb (bőr nélkül), 200g burgonyapüré (vaj nélkül, sovány tejjel), uborkasaláta.", 
+                      snack: "1 db fehérjeszelet vagy 30g fehérjepor vízzel.", 
+                      dinner: "150g grillezett tengeri halfilé, 80g jázmin rizs, friss salátakeverék ecetes-édesítős öntettel." }
+                ],
+                shoppingList: [
+                    { category: "Hús & Hal", item: "Friss csirkemell filé", qty: "1.1 kg" },
+                    { category: "Hús & Hal", item: "Friss pulykamell filé", qty: "700 g" },
+                    { category: "Hús & Hal", item: "Darát pulykahús (comb vagy mell)", qty: "200 g" },
+                    { category: "Hús & Hal", item: "Darált marhahús (sovány 10%-os)", qty: "200 g" },
+                    { category: "Hús & Hal", item: "Lidl fagyasztott tonhalfilé", qty: "1 csomag" },
+                    { category: "Hús & Hal", item: "Fagyasztott lazacfilé vagy tőkehal", qty: "600 g" },
+                    { category: "Tojás & Tejtermék", item: "Lidl friss tojás (L-es)", qty: "10 db" },
+                    { category: "Tojás & Tejtermék", item: "Milbona zsírszegény görög joghurt", qty: "1 nagy doboz" },
+                    { category: "Tojás & Tejtermék", item: "Pilos zsírszegény túró (félzsíros/sovány)", qty: "3 doboz" },
+                    { category: "Tojás & Tejtermék", item: "Lidl Light Cottage Cheese", qty: "2 doboz" },
+                    { category: "Zöldség & Gyümölcs", item: "Kígyóuborka, paradicsom", qty: "Bőven (rostforrás)" },
+                    { category: "Zöldség & Gyümölcs", item: "Cukkini, sárgarépa, spárga, saláta", qty: "Bőven" },
+                    { category: "Zöldség & Gyümölcs", item: "Lidl friss banán", qty: "1 fürt" },
+                    { category: "Zöldség & Gyümölcs", item: "Fagyasztott áfonya és málna", qty: "1-1 csomag" }
+                ]
+            },
+            {
+                week: 2,
+                phase: "1. Fázis: Alapozás (Kalória: ~2400 kcal, P: 200g, CH: 220g, F: 80g)",
+                phaseBadgeClass: "bg-blue-500/10 text-blue-400 border-blue-500/30",
+                days: [
+                    { name: "Hétfő", status: "EDZÉSNAP (Súlyzós edzés) - Tojásos nap 1/3", 
+                      breakfast: "3 db tükörtojás, 100g rozskenyér, 100g kaliforniai paprika.", 
+                      lunch: "180g fűszeres pulykamell, 80g basmati rizs, 150g kígyóuborka saláta.", 
+                      snack: "35g Tejsavófehérje izolátum, 1 nagy banán.", 
+                      dinner: "180g grillezett csirkemell, 200g édesburgonya, salátakeverék." },
+                    { name: "Kedd", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "60g zabkása vízzel főzve, 150g görög joghurt (0%), 50g málna, 15g mandula.", 
+                      lunch: "180g csirkemellcsíkok bazsalikomos paradicsomszószban, 80g barna rizs.", 
+                      snack: "200g cottage cheese, 1 narancs, 15g dió.", 
+                      dinner: "150g sült tőkehalfilé, 100g quinoa, párolt sárgarépa és cukkini." },
+                    { name: "Szerda", status: "EDZÉSNAP (Súlyzós edzés) - Tojásos nap 2/3", 
+                      breakfast: "Rántotta (3 tojásból), 100g teljes kiőrlésű kenyér, paradicsom.", 
+                      lunch: "180g sovány marhahúspogácsa, 300g főtt burgonya petrezselyemmel, kovászos uborka.", 
+                      snack: "35g Tejsavófehérje, 4 db datolya.", 
+                      dinner: "150g lazacfilé sütőben sütve, 80g quinoa, párolt spárga." },
+                    { name: "Csütörtök", status: "EDZÉSNAP (Súlyzós edzés) - Tojásmentes", 
+                      breakfast: "Zabpalacsinta (50g zab, 30g fehérjepor), 100g áfonya.", 
+                      lunch: "180g csirkemellwok cukkini- sárgarépacsíkokkal, 80g jázmin rizs.", 
+                      snack: "35g fehérje turmix, 1 nagy banán.", 
+                      dinner: "180g pulykamellcsíkok tejszínes-mustáros mártásban (kókusztejjel), 200g sült édesburgonya." },
+                    { name: "Péntek", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "200g zsírszegény túró, 100g málna, 20g mogyoróvaj.", 
+                      lunch: "1 konzerv natúr tonhal, 3 db puffasztott rizsszelet, uborka.", 
+                      snack: "200g light cottage cheese, 3 db korpás keksz, 1 alma.", 
+                      dinner: "150g tőkehalfilé, 80g quinoa, jégsaláta." },
+                    { name: "Szombat", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "Krémes smoothie: 40g fehérje, 1 banán, 30g zab, 15g dió.", 
+                      lunch: "180g grill pulykamell, 80g basmati rizs, paradicsomsaláta.", 
+                      snack: "150g zsírszegény túró, 1 narancs.", 
+                      dinner: "180g natúr csirkemell, 200g sütőtök püré, salátakeverék." },
+                    { name: "Vasárnap", status: "Pihenőnap - Tojásos nap 3/3", 
+                      breakfast: "Omlett 3 tojásból, 50g light mozzarellával, 80g teljes kiőrlésű pirítós.", 
+                      lunch: "Sült csirkecomb (bőr nélkül), 200g burgonyapüré (sovány tejjel), csemegeuborka.", 
+                      snack: "1 db fehérjeszelet vagy 30g fehérje vízzel.", 
+                      dinner: "150g sült lazacfilé, 80g jázmin rizs, friss fejes saláta citrommal." }
+                ],
+                shoppingList: [
+                    { category: "Hús & Hal", item: "Friss csirkemell filé", qty: "1.0 kg" },
+                    { category: "Hús & Hal", item: "Friss pulykamell filé", qty: "900 g" },
+                    { category: "Hús & Hal", item: "Darált marhahús (10%-os)", qty: "200 g" },
+                    { category: "Hús & Hal", item: "Lazacfilé és tőkehalfilé", qty: "600 g / 500 g" },
+                    { category: "Tojás & Tejtermék", item: "Lidl friss tojás", qty: "10 db" },
+                    { category: "Tojás & Tejtermék", item: "Pilos zsírszegény túró", qty: "2 doboz" },
+                    { category: "Tojás & Tejtermék", item: "Milbona Light cottage cheese", qty: "3 doboz" },
+                    { category: "Zöldség & Gyümölcs", item: "Kaliforniai paprika, saláta", qty: "Sok" },
+                    { category: "Zöldség & Gyümölcs", item: "Sütőtök, sárgarépa, cukkini", qty: "1-1 kg" },
+                    { category: "Zöldség & Gyümölcs", item: "Banán, narancs, áfonya (Lidl)", qty: "Heti adag" }
+                ]
+            },
+            {
+                week: 3,
+                phase: "1. Fázis: Alapozás (Kalória: ~2400 kcal, P: 200g, CH: 220g, F: 80g)",
+                phaseBadgeClass: "bg-blue-500/10 text-blue-400 border-blue-500/30",
+                days: [
+                    { name: "Hétfő", status: "EDZÉSNAP (Súlyzós edzés) - Tojásos nap 1/3", 
+                      breakfast: "3 tojásos omlett gomba és brokkoli nélkül (csak paradicsommal), 100g teljes kiőrlésű kenyér.", 
+                      lunch: "180g grillezett csirkemell, 80g barna rizs, 150g sárgarépasaláta.", 
+                      snack: "35g Tejsavófehérje, 1 nagy banán.", 
+                      dinner: "150g sült pisztrángfilé vagy tőkehal, 200g édesburgonya, cukkini." },
+                    { name: "Kedd", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "50g zabpehely, 150g görög joghurt, 100g eper, 20g mandula.", 
+                      lunch: "180g pulykamellcsíkok zöld fűszeres pácban, 80g quinoa, uborka.", 
+                      snack: "200g Pilos túró, 1 db narancs, 15g dió.", 
+                      dinner: "180g natúr csirkemell, 150g párolt tök, fejes saláta." },
+                    { name: "Szerda", status: "EDZÉSNAP (Súlyzós edzés) - Tojásos nap 2/3", 
+                      breakfast: "Tükörtojás (3 db), 100g rozskenyér, 100g kápia paprika.", 
+                      lunch: "180g csirkemell filé, 300g főtt burgonya, csemegeuborka.", 
+                      snack: "35g Tejsavófehérje, 4 db datolya.", 
+                      dinner: "150g sült tonhalfilé, 80g jázmin rizs, paradicsom-uborka saláta." },
+                    { name: "Csütörtök", status: "EDZÉSNAP (Súlyzós edzés) - Tojásmentes", 
+                      breakfast: "Zabpalacsinta (50g zab, 30g fehérje), 100g málna.", 
+                      lunch: "180g pulykahús pogácsa, 80g bulgur, kovászos uborka.", 
+                      snack: "35g fehérje turmix, 1 nagy banán.", 
+                      dinner: "180g grill csirkemell, 200g édesburgonya püré, spárga." },
+                    { name: "Péntek", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "200g cottage cheese, 3 db puffasztott rizs, 1 paradicsom.", 
+                      lunch: "1 konzerv tonhal, salátakeverékkel, 1 evőkanál olívaolajjal.", 
+                      snack: "200g zsírszegény túró, 1 alma, 15g dió.", 
+                      dinner: "150g tőkehalfilé citrommal sütve, 80g quinoa, sárgarépa." },
+                    { name: "Szombat", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "Smoothie: 45g fehérje, 1 banán, 30g zabpehely, mogyoróvaj.", 
+                      lunch: "180g sült csirkemell steak, 80g basmati rizs, grill cukkini.", 
+                      snack: "150g görög joghurt, 1 narancs.", 
+                      dinner: "180g pulykamellcsíkok, 150g sütőtök, saláta." },
+                    { name: "Vasárnap", status: "Pihenőnap - Tojásos nap 3/3", 
+                      breakfast: "3 db főtt tojás, 100g teljes kiőrlésű toast, uborka.", 
+                      lunch: "Csirkecomb sütőben sütve, 200g burgonyapüré, saláta.", 
+                      snack: "Fehérjeszelet vagy 30g fehérje turmix.", 
+                      dinner: "150g lazacfilé, 80g jázmin rizs, spárga." }
+                ],
+                shoppingList: [
+                    { category: "Hús & Hal", item: "Friss csirkemell filé", qty: "1.2 kg" },
+                    { category: "Hús & Hal", item: "Pulykamell (szeletelt)", qty: "700 g" },
+                    { category: "Hús & Hal", item: "Lazac- és tonhalfilé", qty: "300 g / 300 g" },
+                    { category: "Hús & Hal", item: "Fagyasztott tőkehalfilé", qty: "600 g" },
+                    { category: "Tojás & Tejtermék", item: "Lidl bio tojás (10 db-os)", qty: "1 doboz" },
+                    { category: "Tojás & Tejtermék", item: "Pilos zsírszegény túró", qty: "3 doboz" },
+                    { category: "Tojás & Tejtermék", item: "Milbona Light cottage cheese", qty: "2 doboz" },
+                    { category: "Zöldség & Gyümölcs", item: "Kígyóuborka, paprika, paradicsom", qty: "Nagy mennyiség" },
+                    { category: "Zöldség & Gyümölcs", item: "Édesburgonya, cukkini, spárga", qty: "1-1.5 kg" },
+                    { category: "Zöldség & Gyümölcs", item: "Banán, málna, eper, citrom", qty: "Ízlés szerint" }
+                ]
+            },
+            {
+                week: 4,
+                phase: "1. Fázis: Alapozás (Kalória: ~2400 kcal, P: 200g, CH: 220g, F: 80g)",
+                phaseBadgeClass: "bg-blue-500/10 text-blue-400 border-blue-500/30",
+                days: [
+                    { name: "Hétfő", status: "EDZÉSNAP (Súlyzós edzés) - Tojásos nap 1/3", 
+                      breakfast: "3 db egész tojásból rántotta, 100g Lidl rozskenyér, paprika.", 
+                      lunch: "180g csirkemell, 80g jázmin rizs, 150g uborkasaláta.", 
+                      snack: "35g Tejsavófehérje, 1 nagy banán.", 
+                      dinner: "150g sült lazacfilé, 200g édesburgonya, saláta." },
+                    { name: "Kedd", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "60g zabkása görög joghurttal (150g), 50g áfonya, 15g kesudió.", 
+                      lunch: "180g pulykamellcsíkok kapros mártásban, 80g teljes kiőrlésű tészta.", 
+                      snack: "200g túró, 1 narancs, 15g mandula.", 
+                      dinner: "180g grill csirkemell, 100g quinoa, párolt sárgarépa és cukkini." },
+                    { name: "Szerda", status: "EDZÉSNAP (Súlyzós edzés) - Tojásos nap 2/3", 
+                      breakfast: "Tükörtojás (3 db), 100g teljes kiőrlésű kenyér, kígyóuborka.", 
+                      lunch: "180g marhahúspogácsa, 300g főtt krumpli, csemegeuborka.", 
+                      snack: "35g fehérje turmix, 3 db puffasztott rizs.", 
+                      dinner: "150g tőkehalfilé, 80g barna rizs, jégsaláta." },
+                    { name: "Csütörtök", status: "EDZÉSNAP (Súlyzós edzés) - Tojásmentes", 
+                      breakfast: "Smoothie: 40g fehérje, 1 banán, 30g zabpehely, mogyoróvaj.", 
+                      lunch: "180g csirkemell filé, 80g bulgur, párolt cukkini.", 
+                      snack: "35g fehérje turmix, 1 nagy banán.", 
+                      dinner: "180g pulykamellcsíkok, 200g sült édesburgonya, spárga." },
+                    { name: "Péntek", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "200g túró gyümölcsökkel, 15g mandula.", 
+                      lunch: "1 konzerv tonhal salátaágyon, 1 evőkanál olívaolajjal.", 
+                      snack: "200g cottage cheese, 3 db korpás keksz, 1 alma.", 
+                      dinner: "150g tőkehalfilé, 80g quinoa, párolt sárgarépa." },
+                    { name: "Szombat", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "Zabpalacsinta (50g zab, 30g fehérje), 100g eper.", 
+                      lunch: "180g grillezett csirkemell, 80g basmati rizs, cukkini.", 
+                      snack: "150g cottage cheese, 1 narancs.", 
+                      dinner: "180g pulykamell, 150g sütőtök sütőben sütve, saláta." },
+                    { name: "Vasárnap", status: "Pihenőnap - Tojásos nap 3/3", 
+                      breakfast: "3 db tojásból omlett 50g zsírszegény sajttal, 80g pirítós.", 
+                      lunch: "Csirkecomb (bőr nélkül), 200g burgonyapüré, saláta.", 
+                      snack: "Fehérjeszelet vagy 30g fehérje turmix.", 
+                      dinner: "150g sült lazac, 80g jázmin rizs, spárga." }
+                ],
+                shoppingList: [
+                    { category: "Hús & Hal", item: "Friss csirkemell filé", qty: "1.1 kg" },
+                    { category: "Hús & Hal", item: "Friss pulykamell szeletek", qty: "800 g" },
+                    { category: "Hús & Hal", item: "Marhahús (90% hús / 10% zsír)", qty: "200 g" },
+                    { category: "Hús & Hal", item: "Friss/Fagyasztott lazacfilé", qty: "300 g" },
+                    { category: "Hús & Hal", item: "Tőkehalfilé", qty: "600 g" },
+                    { category: "Tojás & Tejtermék", item: "Lidl friss bio tojás", qty: "10 db" },
+                    { category: "Tojás & Tejtermék", item: "Pilos zsírszegény túró", qty: "2 doboz" },
+                    { category: "Tojás & Tejtermék", item: "Lidl light cottage cheese", qty: "3 doboz" },
+                    { category: "Zöldség & Gyümölcs", item: "Zöldségek (uborka, cukkini, krumpli)", qty: "2-3 kg összesen" },
+                    { category: "Zöldség & Gyümölcs", item: "Lidl banán, narancs, áfonya", qty: "Szükség szerint" }
+                ]
+            },
+            {
+                week: 5,
+                phase: "2. Fázis: Carb Cycling (Szénhidrát-hintáztatás a gyorsabb zsírégetésért)",
+                phaseBadgeClass: "bg-teal-500/10 text-teal-400 border-teal-500/30",
+                days: [
+                    { name: "Hétfő", status: "EDZÉSNAP (Magas szénhidrát) - Tojásos nap 1/3", 
+                      breakfast: "3 db tojás, 100g rozskenyér, 100g kígyóuborka.", 
+                      lunch: "180g csirkemell, 100g jázmin rizs (magasabb ch!), paradicsomsaláta.", 
+                      snack: "35g Tejsavófehérje, 1 nagy banán.", 
+                      dinner: "150g tonhalfilé, 250g édesburgonya, fejes saláta." },
+                    { name: "Kedd", status: "Pihenőnap (Alacsony szénhidrát) - Tojásmentes", 
+                      breakfast: "200g zsírszegény túró, 50g áfonya, 15g dió.", 
+                      lunch: "180g darált pulykamell (cukormentes paradicsomszósszal), 50g quinoa (alacsonyabb!).", 
+                      snack: "200g light cottage cheese, 10g mandula, 1 zöldalma.", 
+                      dinner: "180g grill csirkemell, nagy adag párolt cukkini és sárgarépa, saláta." },
+                    { name: "Szerda", status: "EDZÉSNAP (Magas szénhidrát) - Tojásos nap 2/3", 
+                      breakfast: "Tükörtojás (3 db), 100g teljes kiőrlésű kenyér, paprika.", 
+                      lunch: "180g pulykamell, 350g főtt burgonya, csemegeuborka.", 
+                      snack: "35g fehérje turmix, 4 db datolya.", 
+                      dinner: "150g lazacfilé, 100g quinoa, párolt spárga." },
+                    { name: "Csütörtök", status: "EDZÉSNAP (Magas szénhidrát) - Tojásmentes", 
+                      breakfast: "Zabpalacsinta (60g zab, 30g fehérje), 100g eper.", 
+                      lunch: "180g marhahús pogácsa, 100g bulgur, kovászos uborka.", 
+                      snack: "35g fehérje turmix, 1 nagy banán.", 
+                      dinner: "180g csirkemell, 250g édesburgonya, cukkini." },
+                    { name: "Péntek", status: "Pihenőnap (Alacsony szénhidrát) - Tojásmentes", 
+                      breakfast: "Krémes smoothie: 40g fehérje, 1 közepes banán, 15g mogyoróvaj, 20g zab.", 
+                      lunch: "1 konzerv natúr tonhal, salátakeverék, uborka, 1 ek tökmag.", 
+                      snack: "150g görög joghurt, 10g kesudió.", 
+                      dinner: "150g tőkehalfilé, friss zöldsaláta citromos öntettel, párolt sárgarépa." },
+                    { name: "Szombat", status: "Pihenőnap (Alacsony szénhidrát) - Tojásmentes", 
+                      breakfast: "200g túró natúr joghurttal, 100g málna, édesítő.", 
+                      lunch: "180g csirkemell steak, nagy adag párolt cukkini.", 
+                      snack: "200g cottage cheese, 10g mandula.", 
+                      dinner: "180g grillezett pulykamell, 100g sütőtök sütőben sütve, jégsaláta." },
+                    { name: "Vasárnap", status: "Pihenőnap (Alacsony szénhidrát) - Tojásos nap 3/3", 
+                      breakfast: "Tojáslepény (3 tojásból) 30g zsírszegény sajttal, uborka.", 
+                      lunch: "Csirkecomb (bőr nélkül), párolt sárgarépa és cukkini wokban.", 
+                      snack: "30g fehérje turmix vízzel, 1 alma.", 
+                      dinner: "150g tengeri halfilé, friss salátakeverék ecetes öntettel." }
+                ],
+                shoppingList: [
+                    { category: "Hús & Hal", item: "Friss csirkemell filé", qty: "1.1 kg" },
+                    { category: "Hús & Hal", item: "Friss pulykamell", qty: "700 g" },
+                    { category: "Hús & Hal", item: "Lazac-, tonhal- és tőkehalfilé", qty: "300g / 300g / 400g" },
+                    { category: "Tojás & Tejtermék", item: "Lidl friss tojás", qty: "10 db" },
+                    { category: "Tojás & Tejtermék", item: "Pilos zsírszegény túró", qty: "3 doboz" },
+                    { category: "Tojás & Tejtermék", item: "Milbona görög joghurt (0% zsír)", qty: "1 nagy pohár" },
+                    { category: "Zöldség & Gyümölcs", item: "Cukkini, sárgarépa, sütőtök", qty: "Nagy mennyiségek" },
+                    { category: "Zöldség & Gyümölcs", item: "Jég- és fejes saláta, uborka", qty: "Sok" }
+                ]
+            },
+            {
+                week: 6,
+                phase: "2. Fázis: Carb Cycling (Szénhidrát-hintáztatás a gyorsabb zsírégetésért)",
+                phaseBadgeClass: "bg-teal-500/10 text-teal-400 border-teal-500/30",
+                days: [
+                    { name: "Hétfő", status: "EDZÉSNAP (Magas szénhidrát) - Tojásos nap 1/3", 
+                      breakfast: "3 db egész tojásból omlett, 100g teljes kiőrlésű toast, uborka.", 
+                      lunch: "180g grill csirkemell filé, 100g barna rizs, paradicsomsaláta.", 
+                      snack: "35g Tejsavófehérje, 1 nagy banán.", 
+                      dinner: "150g sütőben sült tonhalfilé, 250g édesburgonya, saláta." },
+                    { name: "Kedd", status: "Pihenőnap (Alacsony szénhidrát) - Tojásmentes", 
+                      breakfast: "200g túró natúr joghurttal, 50g áfonya, 15g dió.", 
+                      lunch: "180g pulykamellcsíkok wok zöldségekkel (cukkini, répa), 50g quinoa.", 
+                      snack: "200g light cottage cheese, 1 zöldalma, 10g mandula.", 
+                      dinner: "180g grillezett csirkemell, nagy adag jégsaláta uborkával." },
+                    { name: "Szerda", status: "EDZÉSNAP (Magas szénhidrát) - Tojásos nap 2/3", 
+                      breakfast: "Tükörtojás (3 db bio tojás), 100g rozskenyér, paprika.", 
+                      lunch: "180g csirkemell, 350g főtt burgonya, csemegeuborka.", 
+                      snack: "35g fehérje turmix, 4 db datolya.", 
+                      dinner: "150g tőkehalfilé, 100g jázmin rizs, zöldsaláta." },
+                    { name: "Csütörtök", status: "EDZÉSNAP (Magas szénhidrát) - Tojásmentes", 
+                      breakfast: "Zabpalacsinta (60g zab, 30g fehérje), 100g málna.", 
+                      lunch: "180g pulykahúspogácsa, 100g bulgur, kovászos uborka.", 
+                      snack: "35g fehérje turmix, 1 nagy banán.", 
+                      dinner: "180g csirkemellcsíkok wokban sütve, 250g édesburgonya, cukkini." },
+                    { name: "Péntek", status: "Pihenőnap (Alacsony szénhidrát) - Tojásmentes", 
+                      breakfast: "Smoothie: 40g fehérje, 1 közepes banán, 15g mogyoróvaj, 20g zab.", 
+                      lunch: "1 konzerv natúr tonhal, saláta, uborka, paradicsom, 1 ek tökmag.", 
+                      snack: "150g cottage cheese, 10g kesudió.", 
+                      dinner: "150g sült lazacfilé, párolt spárga, fejes saláta citrommal." },
+                    { name: "Szombat", status: "Pihenőnap (Alacsony szénhidrát) - Tojásmentes", 
+                      breakfast: "200g zsírszegény túró görög joghurttal, 100g málna.", 
+                      lunch: "180g pulykamell steak, grill cukkini.", 
+                      snack: "200g cottage cheese, 10g mandula.", 
+                      dinner: "180g natúr csirkemell, 100g sütőtök sütőben sütve, jégsaláta." },
+                    { name: "Vasárnap", status: "Pihenőnap (Alacsony szénhidrát) - Tojásos nap 3/3", 
+                      breakfast: "Tojáslepény (3 tojásból) 30g zsírszegény sajttal, uborka.", 
+                      lunch: "Csirkecomb (bőr nélkül), párolt sárgarépa és cukkini.", 
+                      snack: "30g fehérje turmix vízzel, 1 alma.", 
+                      dinner: "150g grillezett tengeri halfilé, friss salátakeverék ecetes-édesítős öntettel." }
+                ],
+                shoppingList: [
+                    { category: "Hús & Hal", item: "Friss csirkemell filé", qty: "1.1 kg" },
+                    { category: "Hús & Hal", item: "Pulykamell szeletek", qty: "800 g" },
+                    { category: "Hús & Hal", item: "Fagyasztott lazac- és tonhalfilé", qty: "300g / 300g" },
+                    { category: "Tojás & Tejtermék", item: "Lidl friss tojás", qty: "10 db" },
+                    { category: "Tojás & Tejtermék", item: "Pilos zsírszegény túró", qty: "2 doboz" },
+                    { category: "Tojás & Tejtermék", item: "Light cottage cheese", qty: "3 doboz" },
+                    { category: "Zöldség & Gyümölcs", item: "Zöldségek (uborka, cukkini, édesburgonya)", qty: "Vegyesen ~3 kg" },
+                    { category: "Zöldség & Gyümölcs", item: "Lidl friss banán", qty: "1 fürt" }
+                ]
+            },
+            {
+                week: 7,
+                phase: "2. Fázis: Carb Cycling (Szénhidrát-hintáztatás a gyorsabb zsírégetésért)",
+                phaseBadgeClass: "bg-teal-500/10 text-teal-400 border-teal-500/30",
+                days: [
+                    { name: "Hétfő", status: "EDZÉSNAP (Magas szénhidrát) - Tojásos nap 1/3", 
+                      breakfast: "Rántotta (3 tojásból), 100g rozskenyér, 100g kígyóuborka.", 
+                      lunch: "180g pulykamell filé, 100g basmati rizs, paradicsomsaláta.", 
+                      snack: "35g Tejsavófehérje, 1 nagy banán.", 
+                      dinner: "150g tonhalfilé, 250g édesburgonya, jégsaláta." },
+                    { name: "Kedd", status: "Pihenőnap (Alacsony szénhidrát) - Tojásmentes", 
+                      breakfast: "200g túró, 50g áfonya, 15g mandula.", 
+                      lunch: "180g csirkemell wok zöldségekkel, 50g quinoa.", 
+                      snack: "200g light cottage cheese, 1 zöldalma, 10g dió.", 
+                      dinner: "180g grill pulykamell, nagy adag vegyes zöldsaláta." },
+                    { name: "Szerda", status: "EDZÉSNAP (Magas szénhidrát) - Tojásos nap 2/3", 
+                      breakfast: "Tükörtojás (3 db), 100g teljes kiőrlésű toast, paprika.", 
+                      lunch: "180g csirkemell, 350g főtt krumpli, csemegeuborka.", 
+                      snack: "35g fehérje turmix, 4 db datolya.", 
+                      dinner: "150g sült pisztrángfilé, 100g quinoa, spárga." },
+                    { name: "Csütörtök", status: "EDZÉSNAP (Magas szénhidrát) - Tojásmentes", 
+                      breakfast: "Zabpalacsinta (60g zab, 30g fehérje), 100g eper.", 
+                      lunch: "180g darált pulykamellcsíkok, 100g bulgur, kovászos uborka.", 
+                      snack: "35g fehérje turmix, 1 nagy banán.", 
+                      dinner: "180g grill csirkemell, 250g édesburgonya, cukkini." },
+                    { name: "Péntek", status: "Pihenőnap (Alacsony szénhidrát) - Tojásmentes", 
+                      breakfast: "Smoothie: 40g fehérje, 1 banán, 15g mogyoróvaj, 20g zab.", 
+                      lunch: "1 konzerv tonhal, jégsaláta uborkával, 1 evőkanál tökmag.", 
+                      snack: "150g cottage cheese, 10g kesudió.", 
+                      dinner: "150g tőkehalfilé, párolt sárgarépa és cukkini." },
+                    { name: "Szombat", status: "Pihenőnap (Alacsony szénhidrát) - Tojásmentes", 
+                      breakfast: "200g túró natúr joghurttal, 100g málna.", 
+                      lunch: "180g csirkemell steak, grill cukkini.", 
+                      snack: "200g cottage cheese, 10g mandula.", 
+                      dinner: "180g pulykamell, 100g sütőtök, saláta." },
+                    { name: "Vasárnap", status: "Pihenőnap (Alacsony szénhidrát) - Tojásos nap 3/3", 
+                      breakfast: "Tojáslepény (3 tojásból) 30g zsírszegény sajttal, uborka.", 
+                      lunch: "Csirkecomb (bőr nélkül), párolt sárgarépa.", 
+                      snack: "30g fehérje turmix, 1 alma.", 
+                      dinner: "150g tengeri halfilé, friss salátakeverék." }
+                ],
+                shoppingList: [
+                    { category: "Hús & Hal", item: "Friss csirkemell filé", qty: "1.1 kg" },
+                    { category: "Hús & Hal", item: "Pulykamell filé", qty: "850 g" },
+                    { category: "Hús & Hal", item: "Tőkehal és tonhalfilé", qty: "400g / 300g" },
+                    { category: "Tojás & Tejtermék", item: "Lidl bio tojás", qty: "10 db" },
+                    { category: "Tojás & Tejtermék", item: "Pilos túró / cottage cheese", qty: "2 doboz / 3 doboz" },
+                    { category: "Zöldség & Gyümölcs", item: "Ubi, paradicsom, saláták (Lidl)", qty: "Nagy adagok" },
+                    { category: "Zöldség & Gyümölcs", item: "Sárgarépa, cukkini, krumpli", qty: "3 kg vegyesen" }
+                ]
+            },
+            {
+                week: 8,
+                phase: "2. Fázis: Carb Cycling (Szénhidrát-hintáztatás a gyorsabb zsírégetésért)",
+                phaseBadgeClass: "bg-teal-500/10 text-teal-400 border-teal-500/30",
+                days: [
+                    { name: "Hétfő", status: "EDZÉSNAP (Magas szénhidrát) - Tojásos nap 1/3", 
+                      breakfast: "3 tojásos omlett (csak paradicsommal), 100g rozskenyér.", 
+                      lunch: "180g csirkemell, 100g barna rizs, kígyóuborka saláta.", 
+                      snack: "35g Tejsavófehérje, 1 nagy banán.", 
+                      dinner: "150g sült tonhalfilé, 250g édesburgonya, jégsaláta." },
+                    { name: "Kedd", status: "Pihenőnap (Alacsony szénhidrát) - Tojásmentes", 
+                      breakfast: "200g zsírszegény túró, 50g áfonya, 15g mandula.", 
+                      lunch: "180g pulykamell wok cukkini- sárgarépacsíkokkal, 50g quinoa.", 
+                      snack: "200g cottage cheese, 1 zöldalma, 10g dió.", 
+                      dinner: "180g grillezett csirkemell, nagy adag fejes saláta citrommal." },
+                    { name: "Szerda", status: "EDZÉSNAP (Magas szénhidrát) - Tojásos nap 2/3", 
+                      breakfast: "Tükörtojás (3 db), 100g teljes kiőrlésű toast, kápia paprika.", 
+                      lunch: "180g marhahúspogácsa, 350g főtt krumpli, csemegeuborka.", 
+                      snack: "35g fehérje turmix, 4 db datolya.", 
+                      dinner: "150g tőkehalfilé, 100g jázmin rizs, spárga." },
+                    { name: "Csütörtök", status: "EDZÉSNAP (Magas szénhidrát) - Tojásmentes", 
+                      breakfast: "Zabpalacsinta (60g zab, 30g fehérje), 100g málna.", 
+                      lunch: "180g pulykamell steak, 100g bulgur, kovászos uborka.", 
+                      snack: "35g fehérje turmix, 1 nagy banán.", 
+                      dinner: "180g grill csirkemell, 250g édesburgonya, cukkini." },
+                    { name: "Péntek", status: "Pihenőnap (Alacsony szénhidrát) - Tojásmentes", 
+                      breakfast: "Smoothie: 40g fehérje, 1 banán, 15g mogyoróvaj, 20g zab.", 
+                      lunch: "1 konzerv tonhal, jégsaláta uborkával, 1 evőkanál tökmag.", 
+                      snack: "150g cottage cheese, 10g kesudió.", 
+                      dinner: "150g lazacfilé, párolt sárgarépa és cukkini." },
+                    { name: "Szombat", status: "Pihenőnap (Alacsony szénhidrát) - Tojásmentes", 
+                      breakfast: "200g túró görög joghurttal, 100g málna.", 
+                      lunch: "180g csirkemell steak, grill cukkini.", 
+                      snack: "200g cottage cheese, 10g mandula.", 
+                      dinner: "180g pulykamell, 100g sütőtök, saláta." },
+                    { name: "Vasárnap", status: "Pihenőnap (Alacsony szénhidrát) - Tojásos nap 3/3", 
+                      breakfast: "Tojáslepény (3 tojásból) 30g zsírszegény sajttal, uborka.", 
+                      lunch: "Csirkecomb (bőr nélkül), párolt sárgarépa.", 
+                      snack: "30g fehérje turmix, 1 alma.", 
+                      dinner: "150g grillezett tengeri halfilé, friss salátakeverék." }
+                ],
+                shoppingList: [
+                    { category: "Hús & Hal", item: "Friss csirkemell filé", qty: "1.1 kg" },
+                    { category: "Hús & Hal", item: "Marhahús (sovány 10%-os)", qty: "200 g" },
+                    { category: "Hús & Hal", item: "Tőkehal, lazac és tonhalfilé", qty: "400g / 300g / 300g" },
+                    { category: "Tojás & Tejtermék", item: "Lidl friss bio tojás", qty: "10 db" },
+                    { category: "Tojás & Tejtermék", item: "Light cottage cheese", qty: "3 doboz" },
+                    { category: "Zöldség & Gyümölcs", item: "Uborka, sárgarépa, saláták", qty: "Bőven" },
+                    { category: "Zöldség & Gyümölcs", item: "Édesburgonya, sütőtök", qty: "1-1.5 kg" }
+                ]
+            },
+            {
+                week: 9,
+                phase: "3. Fázis: Maximális Shred (Kalória: ~2100 kcal, P: 210g, CH: 170g, F: 70g)",
+                phaseBadgeClass: "bg-rose-500/10 text-rose-400 border-rose-500/30",
+                days: [
+                    { name: "Hétfő", status: "EDZÉSNAP (Intenzív Deficit) - Tojásos nap 1/3", 
+                      breakfast: "3 db egész tojásból rántotta, 60g teljes kiőrlésű kenyér (alacsonyabb ch!), 150g kígyóuborka.", 
+                      lunch: "180g grill csirkemell, 60g jázmin rizs, 200g paradicsomsaláta kevés olívaolajjal.", 
+                      snack: "35g Tejsavófehérje izolátum, 1 közepes Lidl banán.", 
+                      dinner: "150g sütőben sült tonhalfilé, 150g édesburgonya, extra nagy adag fejes saláta citrommal." },
+                    { name: "Kedd", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "45g zabpehely vízzel főzve, 150g Milbona zsírszegény görög joghurt, 50g áfonya, 10g dió.", 
+                      lunch: "180g darált pulykamell (cukormentes paradicsomszósszal), 50g teljes kiőrlésű tészta.", 
+                      snack: "200g Pilos zsírszegény túró, 1 db narancs, 10g mandula.", 
+                      dinner: "180g grillezett csirkemell, 50g quinoa, 200g párolt sárgarépa és cukkini." },
+                    { name: "Szerda", status: "EDZÉSNAP (Intenzív Deficit) - Tojásos nap 2/3", 
+                      breakfast: "Tükörtojás (3 db Lidl bio tojás), 60g rozskenyér, 150g kaliforniai paprika.", 
+                      lunch: "180g grillezett pulykamellcsíkok, 200g főtt burgonya petrezselyemmel, csemegeuborka.", 
+                      snack: "35g Tejsavófehérje turmix, 3 db puffasztott rizsszelet.", 
+                      dinner: "150g tőkehalfilé citromos pácban, 50g barna rizs, nagy adag vegyes zöldsaláta." },
+                    { name: "Csütörtök", status: "EDZÉSNAP (Intenzív Deficit) - Tojásmentes", 
+                      breakfast: "Zabpalacsinta: 40g darált zab, 30g fehérjepor vízzel tésztává keverve (tojás nélkül), áfonya.", 
+                      lunch: "180g marhahúspogácsa (sovány 10%-os marhából), 50g bulgur, kovászos uborka.", 
+                      snack: "35g Tejsavófehérje turmix, 1 közepes Lidl banán.", 
+                      dinner: "180g csirkemellcsíkok wokban sütve, 150g sütőben sült édesburgonya, cukkini." },
+                    { name: "Péntek", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "Krémes smoothie: 40g fehérje, 1 közepes banán, 10g natúr mogyoróvaj, 25g zabpehely vízzel turmixolva.", 
+                      lunch: "1 konzerv natúr tonhal (saját lében, ~130g) salátaágyon (uborka, paradicsom), 1/2 evőkanál tökmaggal.", 
+                      snack: "200g cottage cheese (szemcsés túró - Lidl light), 2 db korpás keksz, 1 alma.", 
+                      dinner: "150g sült lazacfilé, 50g quinoa, párolt sárgarépa és jégsaláta." },
+                    { name: "Szombat", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "200g zsírszegény túró natúr joghurttal és édesítővel krémesítve, 100g málna, 10g kesudió.", 
+                      lunch: "180g csirkemell steak, 50g basmati rizs, párolt cukkini.", 
+                      snack: "Zsírszegény túró vagy cottage cheese (150g), 1 db narancs.", 
+                      dinner: "180g grillezett pulykamell, 100g sütőtök sütőben sütve, jégsaláta." },
+                    { name: "Vasárnap", status: "Pihenőnap - Tojásos nap 3/3", 
+                      breakfast: "Tojáslepény (3 bio tojásból) 30g zsírszegény sajttal, 50g teljes kiőrlésű pirítós, retek.", 
+                      lunch: "Sütőben sült csirkecomb (bőr nélkül), 150g burgonyapüré (vaj nélkül, sovány tejjel), uborkasaláta.", 
+                      snack: "30g fehérjepor vízzel, 1 db narancs.", 
+                      dinner: "150g grillezett tengeri halfilé, 50g jázmin rizs, friss salátakeverék ecetes-édesítős öntettel." }
+                ],
+                shoppingList: [
+                    { category: "Hús & Hal", item: "Friss csirkemell filé", qty: "1.1 kg" },
+                    { category: "Hús & Hal", item: "Friss pulykamell szeletek", qty: "700 g" },
+                    { category: "Hús & Hal", item: "Fagyasztott tonhal és tőkehal", qty: "300 g / 400 g" },
+                    { category: "Hús & Hal", item: "Lazacfilé", qty: "300 g" },
+                    { category: "Tojás & Tejtermék", item: "Lidl friss bio tojás", qty: "10 db" },
+                    { category: "Tojás & Tejtermék", item: "Pilos zsírszegény túró", qty: "3 doboz" },
+                    { category: "Tojás & Tejtermék", item: "Light cottage cheese", qty: "3 doboz" },
+                    { category: "Zöldség & Gyümölcs", item: "Kígyóuborka, paradicsom, saláták", qty: "Bőven (extrém fontos a rost a deficitben)" },
+                    { category: "Zöldség & Gyümölcs", item: "Zöldségek (cukkini, répa, krumpli, paprika)", qty: "2 kg vegyesen" },
+                    { category: "Zöldség & Gyümölcs", item: "Banán, áfonya, málna, narancs", qty: "Mérsékelten" }
+                ]
+            },
+            {
+                week: 10,
+                phase: "3. Fázis: Maximális Shred (Kalória: ~2100 kcal, P: 210g, CH: 170g, F: 70g)",
+                phaseBadgeClass: "bg-rose-500/10 text-rose-400 border-rose-500/30",
+                days: [
+                    { name: "Hétfő", status: "EDZÉSNAP (Intenzív Deficit) - Tojásos nap 1/3", 
+                      breakfast: "3 db egész tojás, 60g rozskenyér, 150g uborka.", 
+                      lunch: "180g pulykamell, 60g jázmin rizs, 200g paradicsom.", 
+                      snack: "35g Tejsavófehérje, 1 banán.", 
+                      dinner: "180g grill csirkemell, 150g édesburgonya, fejes saláta." },
+                    { name: "Kedd", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "45g zabpehely, 150g görög joghurt, 50g málna, 10g mandula.", 
+                      lunch: "180g csirkemellcsíkok wok zöldségekkel, 50g quinoa.", 
+                      snack: "200g cottage cheese, 1 zöldalma, 10g dió.", 
+                      dinner: "180g grill pulykamell, nagy adag jégsaláta uborkával." },
+                    { name: "Szerda", status: "EDZÉSNAP (Intenzív Deficit) - Tojásos nap 2/3", 
+                      breakfast: "Tükörtojás (3 db), 60g teljes kiőrlésű toast, paprika.", 
+                      lunch: "180g marhahúspogácsa, 200g főtt krumpli, csemegeuborka.", 
+                      snack: "35g fehérje, 3 db puffasztott rizs.", 
+                      dinner: "150g tőkehalfilé, 50g barna rizs, zöldsaláta." },
+                    { name: "Csütörtök", status: "EDZÉSNAP (Intenzív Deficit) - Tojásmentes", 
+                      breakfast: "Zabpalacsinta (40g zab, 30g fehérje), áfonya.", 
+                      lunch: "180g csirkemell, 50g bulgur, párolt cukkini.", 
+                      snack: "35g fehérje turmix, 1 banán.", 
+                      dinner: "180g pulykamellcsíkok, 150g sült édesburgonya, spárga." },
+                    { name: "Péntek", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "Smoothie: 40g fehérje, 1 banán, 10g mogyoróvaj, 25g zab.", 
+                      lunch: "1 konzerv tonhal, saláta uborkával, 1/2 ek tökmag.", 
+                      snack: "150g cottage cheese, 10g kesudió.", 
+                      dinner: "150g tőkehalfilé, párolt sárgarépa és cukkini." },
+                    { name: "Szombat", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "200g túró görög joghurttal, 100g áfonya.", 
+                      lunch: "180g csirkemell steak, grill cukkini.", 
+                      snack: "200g cottage cheese, 10g mandula.", 
+                      dinner: "180g pulykamell, 100g sütőtök, saláta." },
+                    { name: "Vasárnap", status: "Pihenőnap - Tojásos nap 3/3", 
+                      breakfast: "Tojáslepény (3 tojásból) 30g zsírszegény sajttal, uborka.", 
+                      lunch: "Csirkecomb (bőr nélkül), párolt sárgarépa.", 
+                      snack: "30g fehérje, 1 narancs.", 
+                      dinner: "150g grillezett tengeri halfilé, friss salátakeverék." }
+                ],
+                shoppingList: [
+                    { category: "Hús & Hal", item: "Friss csirkemell filé", qty: "1.1 kg" },
+                    { category: "Hús & Hal", item: "Pulykamell", qty: "800 g" },
+                    { category: "Hús & Hal", item: "Lazac- és tőkehalfilé", qty: "300g / 600g" },
+                    { category: "Tojás & Tejtermék", item: "Lidl friss tojás", qty: "10 db" },
+                    { category: "Tojás & Tejtermék", item: "Zsírszegény túró és cottage cheese", qty: "Heti csomagok" },
+                    { category: "Zöldség & Gyümölcs", item: "Idényzöldségek a Lidl-ből", qty: "Ubi, paradicsom, spárga, saláta" }
+                ]
+            },
+            {
+                week: 11,
+                phase: "3. Fázis: Maximális Shred (Kalória: ~2100 kcal, P: 210g, CH: 170g, F: 70g)",
+                phaseBadgeClass: "bg-rose-500/10 text-rose-400 border-rose-500/30",
+                days: [
+                    { name: "Hétfő", status: "EDZÉSNAP (Intenzív Deficit) - Tojásos nap 1/3", 
+                      breakfast: "3 db egész tojás, 60g rozskenyér, 150g uborka.", 
+                      lunch: "180g grill csirkemell filé, 60g jázmin rizs, paradicsomsaláta.", 
+                      snack: "35g Tejsavófehérje, 1 banán.", 
+                      dinner: "150g tonhalfilé, 150g édesburgonya, extra jégsaláta." },
+                    { name: "Kedd", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "45g zabpehely, 150g görög joghurt, 50g áfonya, 10g dió.", 
+                      lunch: "180g pulykamell, 50g quinoa, párolt sárgarépa.", 
+                      snack: "200g túró, 1 narancs, 10g mandula.", 
+                      dinner: "180g grill csirkemell, nagy adag fejes saláta." },
+                    { name: "Szerda", status: "EDZÉSNAP (Intenzív Deficit) - Tojásos nap 2/3", 
+                      breakfast: "Tükörtojás (3 db), 60g teljes kiőrlésű toast, kápia paprika.", 
+                      lunch: "180g marhahúspogácsa, 200g főtt burgonya, csemegeuborka.", 
+                      snack: "35g fehérje, 3 db puffasztott rizs.", 
+                      dinner: "150g tőkehalfilé, 50g barna rizs, zöldsaláta." },
+                    { name: "Csütörtök", status: "EDZÉSNAP (Intenzív Deficit) - Tojásmentes", 
+                      breakfast: "Zabpalacsinta (40g zab, 30g fehérje), málna.", 
+                      lunch: "180g csirkemell, 50g bulgur, párolt cukkini.", 
+                      snack: "35g fehérje turmix, 1 banán.", 
+                      dinner: "180g pulykamell, 150g sült édesburgonya, spárga." },
+                    { name: "Péntek", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "Smoothie: 40g fehérje, 1 banán, 10g mogyoróvaj, 25g zab.", 
+                      lunch: "1 konzerv tonhal, jégsaláta uborkával, 1/2 ek tökmag.", 
+                      snack: "150g cottage cheese, 10g kesudió.", 
+                      dinner: "150g lazacfilé, párolt sárgarépa és cukkini." },
+                    { name: "Szombat", status: "Pihenőnap - Tojásmentes", 
+                      breakfast: "200g túró görög joghurttal, 100g málna.", 
+                      lunch: "180g csirkemell steak, grill cukkini.", 
+                      snack: "200g cottage cheese, 10g mandula.", 
+                      dinner: "180g pulykamell, 100g sütőtök, saláta." },
+                    { name: "Vasárnap", status: "Pihenőnap - Tojásos nap 3/3", 
+                      breakfast: "Tojáslepény (3 tojásból) 30g zsírszegény sajttal, uborka.", 
+                      lunch: "Csirkecomb (bőr nélkül), párolt sárgarépa.", 
+                      snack: "30g fehérje, 1 alma.", 
+                      dinner: "150g grillezett tengeri halfilé, friss salátakeverék." }
+                ],
+                shoppingList: [
+                    { category: "Hús & Hal", item: "Csirkemell és pulykamell filé", qty: "1.1 kg / 700 g" },
+                    { category: "Hús & Hal", item: "Tőkehal, lazac és tonhalfilé", qty: "400g / 300g / 300g" },
+                    { category: "Tojás & Tejtermék", item: "Lidl friss tojás", qty: "10 db" },
+                    { category: "Tojás & Tejtermék", item: "Pilos túró / light cottage cheese", qty: "4 doboz / 3 doboz" },
+                    { category: "Zöldség & Gyümölcs", item: "Zöldségek (uborka, paprika, cukkini, saláta)", qty: "Extrém sok a teltségért" }
+                ]
+            }
+        ];
+
+        let selectedWeek = 1;
+
+        // Populate Week Selector Buttons
+        function initWeekSelector() {
+            const container = document.getElementById("week-selector-container");
+            container.innerHTML = "";
+            for (let w = 1; w <= 11; w++) {
+                const btn = document.createElement("button");
+                btn.className = `px-3.5 py-2 rounded-lg font-bold transition-all text-sm border ${
+                    w === selectedWeek 
+                    ? "bg-blue-600 hover:bg-blue-500 text-white border-blue-500 shadow-lg shadow-blue-600/20" 
+                    : "bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700"
+                }`;
+                btn.textContent = `${w}. Hét`;
+                btn.onclick = () => selectWeek(w);
+                container.appendChild(btn);
+            }
+        }
+
+        // Change Active Week
+        function selectWeek(weekNum) {
+            selectedWeek = weekNum;
+            initWeekSelector();
+            renderActiveWeek();
+        }
+
+        // Render Active Week Content
+        function renderActiveWeek() {
+            const data = weeklyData.find(item => item.week === selectedWeek);
+            if (!data) return;
+
+            // Header info
+            document.getElementById("current-week-title").innerHTML = `<i class="fa-solid fa-calendar-week text-blue-400"></i> ${data.week}. Hét Részletes Menüje`;
+            
+            const badge = document.getElementById("current-phase-badge");
+            badge.className = `px-3 py-1 text-xs font-bold rounded-full border ${data.phaseBadgeClass}`;
+            badge.textContent = data.phase;
+
+            // Render Daily Meals Accordions
+            const mealsContainer = document.getElementById("daily-meals-container");
+            mealsContainer.innerHTML = "";
+
+            data.days.forEach((day, index) => {
+                const isTraining = day.status.includes("EDZÉSNAP");
+                const dayCard = document.createElement("div");
+                dayCard.className = `border rounded-xl overflow-hidden transition-all duration-300 ${
+                    isTraining 
+                    ? "bg-slate-800/80 border-blue-500/30 shadow-md shadow-blue-500/5" 
+                    : "bg-slate-800/40 border-slate-700/60"
+                }`;
+
+                dayCard.innerHTML = `
+                    <div class="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-700/50 bg-slate-800/60">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs ${
+                                isTraining ? "bg-blue-600 text-white" : "bg-slate-700 text-slate-300"
+                            }">${day.name.substring(0, 2)}</span>
+                            <div>
+                                <h3 class="font-extrabold text-white text-base">${day.name}</h3>
+                                <p class="text-xs text-slate-400 mt-0.5">${day.status}</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold px-2.5 py-1 rounded-full ${
+                            isTraining ? "bg-blue-500/10 text-blue-400" : "bg-slate-600/20 text-slate-400"
+                        }">
+                            ${isTraining ? "<i class='fa-solid fa-dumbbell mr-1'></i> Edzésnap" : "<i class='fa-solid fa-bed mr-1'></i> Pihenőnap"}
+                        </span>
+                    </div>
+                    <div class="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="space-y-1">
+                            <span class="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1">
+                                <i class="fa-solid fa-egg text-[10px]"></i> Reggeli
+                            </span>
+                            <p class="text-sm text-slate-200 leading-relaxed">${day.breakfast}</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1">
+                                <i class="fa-solid fa-bowl-food text-[10px]"></i> Ebéd ${isTraining ? "<span class='text-[10px] text-blue-400'>(Edzés előtt 2-3 órával)</span>" : ""}
+                            </span>
+                            <p class="text-sm text-slate-200 leading-relaxed">${day.lunch}</p>
+                        </div>
+                        <div class="space-y-1 pt-2 border-t border-slate-700/30 sm:border-t-0">
+                            <span class="text-xs font-bold uppercase tracking-wider text-pink-400 flex items-center gap-1">
+                                <i class="fa-solid fa-apple-whole text-[10px]"></i> Uzsonna ${isTraining ? "<span class='text-[10px] text-blue-400'>(Edzés után)</span>" : ""}
+                            </span>
+                            <p class="text-sm text-slate-200 leading-relaxed">${day.snack}</p>
+                        </div>
+                        <div class="space-y-1 pt-2 border-t border-slate-700/30 sm:border-t-0">
+                            <span class="text-xs font-bold uppercase tracking-wider text-blue-400 flex items-center gap-1">
+                                <i class="fa-solid fa-fish text-[10px]"></i> Vacsora
+                            </span>
+                            <p class="text-sm text-slate-200 leading-relaxed">${day.dinner}</p>
+                        </div>
+                    </div>
+                `;
+                mealsContainer.appendChild(dayCard);
+            });
+
+            // Render Lidl Shopping List
+            const shoppingContainer = document.getElementById("shopping-list-container");
+            shoppingContainer.innerHTML = "";
+
+            let currentCategory = "";
+            data.shoppingList.forEach((item, index) => {
+                if (item.category !== currentCategory) {
+                    currentCategory = item.category;
+                    const catHeader = document.createElement("div");
+                    catHeader.className = "text-xs font-bold uppercase text-slate-400 tracking-wider pt-3 pb-1 border-b border-slate-700/50 mt-2";
+                    catHeader.textContent = currentCategory;
+                    shoppingContainer.appendChild(catHeader);
+                }
+
+                const itemRow = document.createElement("label");
+                itemRow.className = "flex justify-between items-center bg-slate-900/40 hover:bg-slate-900/80 px-3 py-2 rounded-lg cursor-pointer transition-all border border-slate-700/30 select-none";
+                itemRow.innerHTML = `
+                    <div class="flex items-center gap-2.5">
+                        <input type="checkbox" class="w-4.5 h-4.5 rounded text-emerald-500 bg-slate-800 border-slate-700 focus:ring-emerald-500 focus:ring-offset-slate-900 list-ingredient-checkbox">
+                        <span class="text-sm text-slate-200 ingredient-name">${item.item}</span>
+                    </div>
+                    <span class="text-xs font-extrabold text-slate-400 bg-slate-800 px-2 py-0.5 rounded-md border border-slate-700/50">${item.qty}</span>
+                `;
+                shoppingContainer.appendChild(itemRow);
+            });
+        }
+
+        // Bulk select / deselect checkboxes
+        function checkAllIngredients(status) {
+            const checkboxes = document.querySelectorAll(".list-ingredient-checkbox");
+            checkboxes.forEach(box => {
+                box.checked = status;
+                const labelText = box.nextElementSibling;
+                if (status) {
+                    labelText.classList.add("line-through", "text-slate-500");
+                } else {
+                    labelText.classList.remove("line-through", "text-slate-500");
+                }
+            });
+        }
+
+        // Keep checked line-through formatting reactive
+        document.addEventListener("change", function(e) {
+            if (e.target && e.target.classList.contains("list-ingredient-checkbox")) {
+                const labelText = e.target.nextElementSibling;
+                if (e.target.checked) {
+                    labelText.classList.add("line-through", "text-slate-500");
+                } else {
+                    labelText.classList.remove("line-through", "text-slate-500");
+                }
+            }
+        });
+
+        // Initialize App on load
+        window.onload = function() {
+            initWeekSelector();
+            renderActiveWeek();
+        }
+    </script>
+</body>
+</html>
